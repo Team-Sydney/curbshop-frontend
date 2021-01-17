@@ -1,5 +1,7 @@
 <template>
   <v-app dark>
+    <Appbar/>
+    <Sidebar/>
     <v-main>
       <v-container fluid>
         <router-view/>
@@ -9,13 +11,15 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld';
+import Appbar from './components/Appbar';
+import Sidebar from './components/Sidebar';
 
 export default {
   name: 'App',
 
   components: {
-    // HelloWorld,
+    Sidebar,
+    Appbar
   },
 
   data: () => ({
