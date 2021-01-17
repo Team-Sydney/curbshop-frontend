@@ -2,7 +2,7 @@
   <v-data-table
     dark
     :headers="headers"
-    :items="desserts"
+    :items="products"
     sort-by="calories"
     class="elevation-1"
   >
@@ -158,12 +158,14 @@
 
 <script>
 // @ is an alias to /src
+import axios from 'axios';
 import ProductsTable from '@/components/products/ProductsTable';
 
 export default {
   data: () => ({
     dialog: false,
     dialogDelete: false,
+    products: [],
     headers: [
       {
         value: 'photoURL',
@@ -192,7 +194,9 @@ export default {
       desc: ''
     },
   }),
+  mounted() {
 
+  },
   computed: {
     formTitle () {
       return this.editedIndex === -1 ? 'New Product' : 'Edit Product'
@@ -208,28 +212,19 @@ export default {
     },
   },
 
-  created () {
-    this.initialize()
+  async created () {
+    try {
+      const response = await axios.get(`https://api.curbshop.online/api/products`)
+      this.products = response.data;
+    } catch (e) {
+      this.errors.push(e);
+    }
+    console.log(this.products)
   },
 
   methods: {
     initialize () {
-      this.desserts = [
-        {
-          photoURL: 'https://f4d5s4a5.stackpathcdn.com/wp-content/uploads/2019/08/5-Minute-Strawberry-Frozen-Yogurt-Vegan-No-Machine-Sweet-Simple-Vegan-1.jpg',
-          name: 'Frozen Yogurt',
-          quantity: '10',
-          price: '$50.42',
-          desc: 'Description here :)'
-        },
-        {
-          photoURL: 'https://upload.wikimedia.org/wikipedia/commons/6/69/IceCreamSandwich.jpg',
-          name: 'Ice cream sandwich',
-          quantity: '10',
-          price: '$50.42',
-          desc: 'Description here :)'
-        },
-      ]
+
     },
 
     editItem (item) {

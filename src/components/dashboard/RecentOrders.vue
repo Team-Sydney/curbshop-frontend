@@ -21,20 +21,19 @@ export default {
     return {
       headers: [
         { text: 'Product Name', align: 'start', value: 'name' },
-        { text: 'Status', align: 'start', value: ''}
         { text: 'Quantity', align: 'start', value: 'quantity' },
         { text: 'Total Price', align: 'start', value: 'totalPrice' },
         { text: 'Date', align: 'start', value: 'orderDate' }
       ],
       orders: [
         {
-          name: 'Sprinkle Shit',
+          name: 'Notebook',
           quantity: 10,
           totalPrice: '$30.10',
           orderDate: '1/17/2021'
         },
         {
-          name: 'Jacket',
+          name: 'T-Shirt',
           quantity: 1,
           totalPrice: '$84.50',
           orderDate: '1/17/2021'

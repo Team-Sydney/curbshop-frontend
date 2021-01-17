@@ -53,7 +53,7 @@ export default {
   data() {
     return {
       items: [
-        { title: 'Dashoard', icon: 'mdi-view-dashboard', route: '/'},
+        { title: 'Dashboard', icon: 'mdi-view-dashboard', route: '/'},
         { title: 'Products', icon: 'mdi-dots-grid', route: '/products'},
         { title: 'Orders', icon: 'mdi-basket', route: '/orders'},
         { title: 'Sales', icon: 'mdi-point-of-sale', route: '/sales'}
