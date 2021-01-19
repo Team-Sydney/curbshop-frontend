@@ -1,10 +1,12 @@
 <template>
   <v-app dark>
-    <Appbar/>
-    <Sidebar/>
+    <!-- <Appbar/>
+    <Sidebar/> -->
     <v-main>
       <v-container fluid>
-        <router-view/>
+        <h1 class="text-center">curbshop.online</h1>
+        <h2 class="text-center">coming soon...</h2>
+        <!-- <router-view/> -->
       </v-container>
     </v-main>
   </v-app>
